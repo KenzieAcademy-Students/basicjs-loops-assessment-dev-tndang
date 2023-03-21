@@ -6,7 +6,7 @@ let numbers = [
     179, 535, 940, 472,
 ];
 
-let largestNumber = function() {
+let largestNumber = function() { // This function returns the largest number in the array
     let highestNumber = 0;
     for (let index = 0; index < numbers.length; index++) {
         let currentNumber = numbers[index];
@@ -18,7 +18,7 @@ let largestNumber = function() {
     return highestNumber;
 }
 
-let smallestNumber = function() {
+let smallestNumber = function() { // This function returns the smallest number in the array
     let lowestNumber = 1000;
     for (let index = 0; index < numbers.length; index++) {
         let currentNumber = numbers[index];
@@ -30,7 +30,7 @@ let smallestNumber = function() {
     return lowestNumber;
 }
 
-let sum = function() {
+let sum = function() { // This function returns the total sum of all the numbers in the array
     let result = 0;
     for (let index = 0; index < numbers.length; index++) {
         result += numbers[index];
@@ -39,7 +39,7 @@ let sum = function() {
     return result;
 }
 
-let average = function() {
+let average = function() { // This function returns the average value from the array
     let sum = 0;
     let result;
     for (let index = 0; index < numbers.length; index++) {
@@ -52,7 +52,7 @@ let average = function() {
     return result;
 }
 
-let evenNumbers = function() {
+let evenNumbers = function() { // This function returns a new array with only the even numbers from the numbers[] array
     let evenArray = [];
     for (let index = 0; index < numbers.length; index++) {
         let currentNumber = numbers[index];
@@ -64,7 +64,7 @@ let evenNumbers = function() {
     return evenArray;
 }
 
-let oddNumbers = function() {
+let oddNumbers = function() { // This function returns a new array with only the odd numbers from the numbers[] array
     let oddArray = [];
     for (let index = 0; index < numbers.length; index++) {
         let currentNumber = numbers[index];
@@ -76,7 +76,7 @@ let oddNumbers = function() {
     return oddArray;
 }
 
-let eightDivisible = function() {
+let eightDivisible = function() { // This function returns a new array with only the numbers divisible by 8 from the numbers[] array
     let divEightArray = [];
     for (let index = 0; index < numbers.length; index++) {
         let currentNumber = numbers[index];
@@ -88,13 +88,23 @@ let eightDivisible = function() {
     return divEightArray;
 }
 
-largestNumber();
-smallestNumber();
-sum();
-average();
-evenNumbers();
-oddNumbers();
-eightDivisible();
+let analyzerStings = [ // This array holds all the string results for the Array Analyzer
+    `Largest Number: ${largestNumber()}`,
+    `Smallest Number: ${smallestNumber()}`,
+    `Sum: ${sum()}`,
+    `Average Value: ${average()}`,
+    `Even Numbers: ${evenNumbers()}`,
+    `Odd Numbers: ${oddNumbers()}`,
+    `Numbers divisible by 8: ${eightDivisible()}`
+];
+
+let analyzerListHTML = function() { // This function lists out all the strings in the analyzerStings[] Array in HTML
+    let stringResult = "";
+    for (let index = 0; index < analyzerStings.length; index++) {
+        stringResult += `<li>${analyzerStings[index]}</li>`;
+    }
+    return stringResult;
+}
 
 document.write("<h1>Array Analyzer</h1>");
 let displayNumbers = function() { // This function will display the array to the DOM
@@ -110,6 +120,7 @@ document.write("<ul>");
 //     document.write("<li>Second Number: " + numbers[1] + "</li>");
 
 // Write your code here 👇
+document.write(`${analyzerListHTML()}`);
 
 
 
