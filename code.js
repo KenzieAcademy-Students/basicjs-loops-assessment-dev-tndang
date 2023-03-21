@@ -88,7 +88,7 @@ let eightDivisible = function() { // This function returns a new array with only
     return divEightArray;
 }
 
-let analyzerStings = [ // This array holds all the string results for the Array Analyzer
+let analyzerString = [ // This array holds all the string results for the Array Analyzer
     `Largest Number: ${largestNumber()}`,
     `Smallest Number: ${smallestNumber()}`,
     `Sum: ${sum()}`,
@@ -100,8 +100,8 @@ let analyzerStings = [ // This array holds all the string results for the Array 
 
 let analyzerListHTML = function() { // This function lists out all the strings in the analyzerStings[] Array in HTML
     let stringResult = "";
-    for (let index = 0; index < analyzerStings.length; index++) {
-        stringResult += `<li>${analyzerStings[index]}</li>`;
+    for (let index = 0; index < analyzerString.length; index++) {
+        stringResult += `<li>${analyzerString[index]}</li>`;
     }
     return stringResult;
 }
